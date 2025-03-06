@@ -1,4 +1,4 @@
-# Laboratorio di Basi di Dati
+# Lab
 
 All ER diagrams are made with [DB Main](https://www.db-main.eu/)
 
