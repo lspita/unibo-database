@@ -1,6 +1,6 @@
 # Laboratorio di Basi di Dati
 
-Tutti gli schemi ER sono stati realizzati tramite [DB Main](https://www.db-main.eu/)
+All ER diagrams are made with [DB Main](https://www.db-main.eu/)
 
-Esercizi:
+Exercises:
 - [Progettazione concettuale](./progettazione-concettuale)
