@@ -1,0 +1,26 @@
+name: ${DOCKER_COMPOSE_NAME:?DOCKER_COMPOSE_NAME must be non-empty}
+
+services:
+  db:
+    env_file: ${DB_ROOT?DB_ROOT must exist}/.env
+    image: ${DOCKER_COMPOSE_NAME}/db
+    container_name: ${DOCKER_COMPOSE_NAME}-db
+    build:
+      context: ${DB_ROOT}
+    ports:
+      - 3306:3306
+    networks:
+      - default
+  dev:
+    depends_on:
+        db:
+          condition: service_healthy
+    image: mcr.microsoft.com/devcontainers/base:bullseye
+    container_name: ${DOCKER_COMPOSE_NAME}-dev
+    command: sleep infinity
+    networks:
+    - default
+
+networks:
+  default:
+    driver: bridge

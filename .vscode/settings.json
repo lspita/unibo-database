@@ -1,0 +1,19 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "db",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "NorthWind",
+            "group": "SQL",
+            "database": "northwind",
+            "username": "root",
+            "password": "root"
+        }
+    ]
+}
