@@ -14,6 +14,21 @@
             "database": "northwind",
             "username": "root",
             "password": "root"
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "db",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "Piscina",
+            "group": "SQL",
+            "database": "Piscina",
+            "username": "root",
+            "password": "root"
         }
     ]
 }
