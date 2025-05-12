@@ -269,7 +269,7 @@ WITH OrderTotal(OrderID, Total) AS (
     FROM `Order Details`
     GROUP BY OrderID
 )
-SELECT o.*
+SELECT COUNT(*)
 FROM OrderTotal AS ot
     JOIN Orders AS o ON o.OrderID = ot.OrderID
 WHERE ot.Total > 10000
