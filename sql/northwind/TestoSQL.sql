@@ -85,10 +85,12 @@ WHERE CustomerID NOT IN (
     );
 
 /* 12.	Selezionare il prodotto più costoso*/
-SELECT *
+SELECT ProductID
 FROM Products
-ORDER BY UnitPrice DESC
-LIMIT 1;
+WHERE UnitPrice = (
+        SELECT MAX(UnitPrice)
+        FROM Products
+    );
 
 /* 13.	Visualizzare l’importo totale di ciascun ordine fatto dal cliente 'Ernst Handel' (CompanyName)*/
 SELECT o.OrderID,
@@ -154,8 +156,10 @@ WHERE HireDate > (
 WITH MostExpensiveProduct(ProductID) AS (
     SELECT ProductID
     FROM Products
-    ORDER BY UnitPrice DESC
-    LIMIT 1
+    WHERE UnitPrice = (
+            SELECT MAX(UnitPrice)
+            FROM Products
+        )
 )
 SELECT DISTINCT o.*
 FROM Orders AS o
